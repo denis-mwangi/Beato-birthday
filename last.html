@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Crazy Memories 😄💛</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg,
+                    #ffd1dc 0%,
+                    #e6e6fa 25%,
+                    #ffefd5 50%,
+                    #e6e6fa 75%,
+                    #ffd1dc 100%);
+            background-size: 400% 400%;
+            animation: gradientFlow 15s ease infinite;
+            font-family: 'Quicksand', sans-serif;
+            overflow-x: hidden;
+            color: #4a4a4a;
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .magic-sparkles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .magic-sparkles::before,
+        .magic-sparkles::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, white 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: sparkleLayer 8s linear infinite;
+            opacity: 0.5;
+        }
+
+        .magic-sparkles::after {
+            animation-delay: -4s;
+            transform: rotate(45deg);
+        }
+
+        @keyframes sparkleLayer {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50px); }
+        }
+
+        .floating-hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 1.5rem;
+            color: rgba(255, 105, 180, 0.6);
+            animation: floatHeart var(--float-duration, 6s) ease-in-out infinite;
+            animation-delay: var(--delay, 0s);
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translate(0, 100vh) rotate(0deg); }
+            100% { transform: translate(var(--translate-x, 0), -100vh) rotate(360deg); }
+        }
+
+        .welcome {
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        .welcome h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: #ff69b4;
+        }
+
+        .welcome p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 1.5rem auto;
+        }
+
+        .memory-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .memory-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 1.5rem;
+            transition: 0.4s;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-10px);
+        }
+        .memory-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: 40% 30%; /* 👈 yaha add karna hai */
+            border-radius: 15px;
+            margin-bottom: 1rem;
+}         
+        
+        .img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: 50% 45%; /* 👈 yaha add karna hai */
+            border-radius: 15px;
+            margin-bottom: 1rem;
+}
+       
+        .img2 {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: 45%  30%; /* 👈 yaha add karna hai */
+            border-radius: 15px;
+            margin-bottom: 1rem;
+}
+
+        .memory-date {
+            color: #ff69b4;
+            font-size: 1.3rem;
+        }
+
+        .memory-caption {
+            color: #666;
+        }
+
+        .final-message {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .final-message h2 {
+            font-size: 3rem;
+            color: #ff69b4;
+        }
+
+        .final-message p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .goodbye-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            margin-top: 2rem;
+            background: #ff69b4;
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="magic-sparkles"></div>
+
+    <div class="floating-hearts">
+        <div class="heart" style="--delay:0s;">💛</div>
+        <div class="heart" style="--delay:1s;">💖</div>
+        <div class="heart" style="--delay:2s;">💗</div>
+    </div>
+
+    <section class="welcome">
+        <h1>Crazy & Beautiful Memories 😄💛</h1>
+        <p>
+            Every moment with you is absolutely amazing 😄💛 <br>
+                Let's make countless memories...
+        </p>
+    </section>
+
+    <div class="memory-container">
+
+        <div class="memory-card">
+            <img src="./smile.jpg" class="img">
+            <div class="memory-date">Best Smile 😂</div>
+            <div class="memory-caption">
+                You laugh for no reason... and that right there is the best part 😂💛
+            </div>
+        </div>
+
+        <div class="memory-card">
+    <img src="stand.jpg" class="memory-img">
+    <div class="memory-date">Main Character Energy ✨</div>
+    <div class="memory-caption">
+        A heart full of dreams 💖💭, a lifetime of smiles 😊, and adventures that make the world worth living!
+    </div>
+    
+</div>
+
+    <div class="memory-card">
+            <img src="tog.jpg" class="img2">
+            <div class="memory-date">The Rare Occasion 🦄</div>
+            <div class="memory-caption">
+                We don’t really talk much or hangout quite often, but I cherish every moment... Here’s to making countless more memories. 🥂✨
+            </div>
+        </div>
+
+    </div>
+
+    <section class="final-message">
+        <h2>For You Beato 💛</h2>
+<p>
+    Happy Birthday 💛 <br><br>
+
+    We don't meet people by accident. ✨ <br> We are meant to cross paths for a reason.I hope that you are reminded of just how lucky I feel that our paths crossed.💖 Birthdays come each and every year, but friends like you only come once in a lifetime... 🎂🎈
+    <br>
+    May every new chapter be better than your last.
+</p>
+
+        <a href="index.html" class="goodbye-btn">Besties Forever 💛</a>
+    </section>
+
+</body>
+
+</html>
+
