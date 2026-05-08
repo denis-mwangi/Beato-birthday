@@ -287,7 +287,6 @@
         
         // Change button text to show it's playing
         event.target.innerHTML = "Happy Birthday... 🎵";
-        console.log("Audio started. Home button locked for 1 minute and 27 seconds.");
     }
 
     // This event triggers automatically when the song reaches the end
@@ -299,15 +298,14 @@
         homeBtn.style.cursor = "pointer";
         homeBtn.innerHTML = "Home 🏠";
         
-        console.log("System Check: Song complete. Engineering protocols satisfied. 🔓");
     };
 
     function goHome() {
         if (songFinished) {
             window.location.href = "index.html";
         } else {
-            // The "Troll" alert if they try to skip before the 1:27 is up
-            alert("Opps lazima hutaki kuskiza wimbo 😭💔");
+            
+            alert("Opps hutaki kuskiza wimbo 😭💔");
         }
     }
 </script>
