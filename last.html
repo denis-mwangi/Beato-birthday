@@ -249,10 +249,24 @@
     May every new chapter be better than your last.
 </p>
 
-        <a href="index.html" class="goodbye-btn">Besties Forever 💛</a>
-    </section>
+       <a href="javascript:void(0)" class="goodbye-btn" onclick="playMusic()">Besties Forever 💛</a>
+
+<audio id="birthdaySong">
+    <source src="hap.mpeg" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
 
 </body>
+<script>
+    function playMusic() {
+  var audio = document.getElementById("birthdaySong");
+  if (audio.paused) {
+      audio.play();
+  } else {
+      audio.pause();
+  }
+}
+</script>
 
 </html>
 
