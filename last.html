@@ -249,12 +249,39 @@
     May every new chapter be better than your last.
 </p>
 
-       <a href="javascript:void(0)" class="goodbye-btn" onclick="playMusic()">Besties Forever 💛</a>
+       <!-- <a href="javascript:void(0)" class="goodbye-btn" onclick="playMusic()">Besties Forever 💛</a>
 
 <audio id="birthdaySong">
     <source src="hap.mpeg" type="audio/mpeg">
     Your browser does not support the audio element.
+</audio> -->
+
+<!-- <br> -->
+<!-- <a href="index.html" class="goodbye-btn" >Home 💛</a> -->
+
+<!-- Navigation & Music Buttons -->
+<div class="button-container">
+    
+    <!-- Button 1: Must be clicked first to play music and unlock home -->
+    <a href="javascript:void(0)" class="goodbye-btn" onclick="playBestieMusic()">
+        Besties Forever 💛
+    </a>
+
+    <!-- Button 2: Locked until Button 1 is clicked -->
+    <a href="javascript:void(0)" id="homeBtn" class="goodbye-btn" 
+       style="opacity: 0.5; cursor: not-allowed;" onclick="goHome()">
+        Home 🏠
+    </a>
+
+</div>
+
+<!-- Audio Assets -->
+<audio id="bestieSong">
+    <source src="hap.mpeg" type="audio/mpeg">
 </audio>
+
+
+
 
 </body>
 <script>
@@ -266,6 +293,32 @@
       audio.pause();
   }
 }
+let clickedBesties = false;
+
+    function playBestieMusic() {
+        clickedBesties = true;
+        
+        // Play the music
+        const bestieAudio = document.getElementById("bestieSong");
+        bestieAudio.play();
+
+        // Unlock the Home button visually
+        const homeBtn = document.getElementById("homeBtn");
+        homeBtn.style.opacity = "1";
+        homeBtn.style.cursor = "pointer";
+        
+        console.log("System Check: Bestie status confirmed. Home path unlocked. 🔓");
+    }
+
+    function goHome() {
+        if (clickedBesties) {
+            // Simply redirect without playing extra music
+            window.location.href = "index.html";
+        } else {
+            // The "Troll" alert remains to ensure they click the music button first
+            alert("⚠️ ERROR: 404 Bestie Not Found. \n\nPlease click the 'Besties Forever' button to calibrate the friendship sensors before exiting! ⚙️🛠️");
+        }
+    }
 </script>
 
 </html>
